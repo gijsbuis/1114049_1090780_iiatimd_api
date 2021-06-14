@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\InstructionController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/recipes', [RecipeController::class, 'index']);
+Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
+Route::post('/recipes', [RecipeController::class, 'store']);
+
+Route::get('/recipes/{recipe}/instructions', [RecipeController::class, 'show_instructions']);
+Route::post('/recipes/{recipe}/instructions', [InstructionController::class, 'store']);
