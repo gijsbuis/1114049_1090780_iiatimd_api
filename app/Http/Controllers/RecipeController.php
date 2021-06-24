@@ -35,4 +35,13 @@ class RecipeController extends Controller
 
         return response()->json(['message'=>'Geen instructies beschikbaar', 'data'=>null], 200);
     }
+
+    public function show_ingredients(Recipe $recipe){
+        $ingredients = $recipe->ingredients;
+        if(count($ingredients) >0){
+            return response()->json(['message'=>'Success', 'data'=>$ingredients], 200);
+        }
+
+        return response()->json(['message'=>'Geen ingredienten beschikbaar', 'data'=>null], 200);
+    }
 }

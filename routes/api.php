@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\InstructionController;
+use App\Http\Controllers\IngredientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,6 @@ Route::post('/recipes', [RecipeController::class, 'store']);
 
 Route::get('/recipes/{recipe}/instructions', [RecipeController::class, 'show_instructions']);
 Route::post('/recipes/{recipe}/instructions', [InstructionController::class, 'store']);
+
+Route::get('/recipes/{recipe}/ingredients', [RecipeController::class, 'show_ingredients']);
+Route::post('/recipes/{recipe}/ingredients', [IngredientController::class, 'store']);

@@ -8,10 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Recipe extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description_short','description','prep_time_min'];
+    protected $fillable = [
+        'title', 'description_short','description','prep_time_min'
+    ];
 
     public function instructions(){
         return $this->hasMany(Instruction::class);
+    }
+
+    public function ingredients(){
+        return $this->hasMany(Ingredient::class);
     }
 
     
