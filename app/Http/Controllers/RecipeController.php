@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 use App\Models\Recipe;
 use App\Models\Instruction;
 
@@ -16,15 +18,19 @@ class RecipeController extends Controller
         return response()->json(['message'=>'Success', 'data'=>$recipe], 200);
     }
     public function store(Request $request){
+
+        $validator = $this->validateRecipe();
+        if ($validator->fails()){
+            return response()->json(['message'=>$validator->messages(),'data'=>null], 400);
+        }
+
+        $recipe = new Recipe($validator->validate());
+        if ($recipe->save()){
+            return response()->json(['message'=>'Instructie opgeslagen','data'=>$recipe], 200);
+        }
+        return response()->json(['message'=>'Er gings iets fout','data'=>null], 400);
         // needs validation still
-        $recipe = new Recipe;
-
-        $recipe->title = $request->title;
-        $recipe->description_short = $request->description_short;
-        $recipe->description = $request->description;
-        $recipe->prep_time_min = $request->prep_time_min;
-
-        $recipe->save();
+        
     }
 
     public function show_instructions(Recipe $recipe){
@@ -43,5 +49,14 @@ class RecipeController extends Controller
         }
 
         return response()->json(['message'=>'Geen ingredienten beschikbaar', 'data'=>null], 200);
+    }
+
+    public function validateRecipe(){
+        return Validator::make(request()->all(),[
+            'title'             => 'required|string|min:3|max:255',
+            'description_short' => 'required|string|min:3|max:255',
+            'description'       => 'required|string|min:3|max:255',
+            'prep_time_min'     => 'required|integer|min:3|max:255'
+        ]);
     }
 }
