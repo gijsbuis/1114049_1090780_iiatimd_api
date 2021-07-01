@@ -19,18 +19,30 @@ class RecipeController extends Controller
     }
     public function store(Request $request){
 
-        $validator = $this->validateRecipe();
+        $validator = $this->validateNewRecipe();
         if ($validator->fails()){
-            return response()->json(['message'=>$validator->messages(),'data'=>null], 400);
+            return response()->json(['message'=>$validator->messages(),'data'=>'null'], 400);
         }
 
         $recipe = new Recipe($validator->validate());
         if ($recipe->save()){
-            return response()->json(['message'=>'Instructie opgeslagen','data'=>$recipe], 200);
+            return response()->json(['message'=>'Recept opgeslagen','data'=>$recipe], 200);
         }
-        return response()->json(['message'=>'Er gings iets fout','data'=>null], 400);
-        // needs validation still
+        return response()->json(['message'=>'Er gings iets fout','data'=>'null'], 400);
         
+    }
+
+    public function update(Request $request, $id){
+        $validator = $this->validateUpdateRecipe();
+        if ($validator->fails()){
+            return response()->json(['message'=>$validator->messages(),'data'=>'null'], 400);
+        }
+
+        $updateRecipe = Recipe::find($id);
+        if ($updateRecipe->update($request->all())){
+            return response()->json(['message'=>'Recept geupdate','data'=>$updateRecipe], 200);
+        }
+        return response()->json(['message'=>'Er gings iets fout','data'=>'null'], 400);
     }
 
     public function show_instructions(Recipe $recipe){
@@ -51,12 +63,20 @@ class RecipeController extends Controller
         return response()->json(['message'=>'Geen ingredienten beschikbaar', 'data'=>null], 200);
     }
 
-    public function validateRecipe(){
+    public function validateNewRecipe(){
         return Validator::make(request()->all(),[
-            'title'             => 'required|string|min:3|max:255',
+            'title'             => 'required|string|min:3|max:255', 
             'description_short' => 'required|string|min:3|max:255',
             'description'       => 'required|string|min:3|max:255',
             'prep_time_min'     => 'required|integer|min:3|max:255'
+        ]);
+    }
+    public function validateUpdateRecipe(){
+        return Validator::make(request()->all(),[
+            'title'             => 'string|min:3|max:255',
+            'description_short' => 'string|min:3|max:255',
+            'description'       => 'string|min:3|max:255',
+            'prep_time_min'     => 'integer|min:3|max:255'
         ]);
     }
 }
