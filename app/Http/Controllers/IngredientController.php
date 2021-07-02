@@ -10,6 +10,11 @@ use App\Models\Ingredient;
 
 class IngredientController extends Controller
 {
+    public function index(){
+        $ingredients = Ingredient::all();
+        return response()->json(['message'=>'Success', 'data'=>$ingredients], 200);
+    }
+
     public function show(Ingredient $ingredient){
         return response()->json(['message'=>'Success','data'=>$ingredient], 200);
     }

@@ -27,6 +27,9 @@ Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 Route::post('/recipe', [RecipeController::class, 'store']);
 Route::post('/recipes/{id}/update', [RecipeController::class, 'update']);
 
+Route::get('/instructions', [InstructionController::class, 'index']);
+Route::get('/ingredients', [IngredientController::class, 'index']);
+
 Route::get('/recipes/{recipe}/instructions', [RecipeController::class, 'show_instructions']);
 Route::post('/recipes/{recipe}/instructions', [InstructionController::class, 'store']);
 

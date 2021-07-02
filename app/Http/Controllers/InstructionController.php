@@ -10,6 +10,10 @@ use App\Models\Recipe;
 
 class InstructionController extends Controller
 {
+    public function index(){
+        $instructions = Instruction::all();
+        return response()->json(['message'=>'Success', 'data'=>$instructions], 200);
+    }
     public function show(Instruction $instruction){
         return response()->json(['message'=>'Success','data'=>$instruction], 200);
     }
