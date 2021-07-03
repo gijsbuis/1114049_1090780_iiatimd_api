@@ -13,7 +13,7 @@ class AuthController extends Controller
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string'
         ]);
 
         $user = User::create([
@@ -29,7 +29,7 @@ class AuthController extends Controller
             'token' => $token
         ];
 
-        return response($response, 201);
+        return response()->json(['message'=>'succes','data'=>$response], 201);
     }
 
     public function login(Request $request) {
@@ -43,7 +43,7 @@ class AuthController extends Controller
 
         // Check password
         if(!$user || !Hash::check($fields['password'], $user->password)) {
-            return response([
+            return response()->json([
                 'message' => 'Wrong credits'
             ], 401);
         }
@@ -55,7 +55,7 @@ class AuthController extends Controller
             'token' => $token
         ];
 
-        return response($response, 201);
+        return response()->json(['message'=>'succes','data'=>$response], 200);
     }
 
     public function logout(Request $request) {
