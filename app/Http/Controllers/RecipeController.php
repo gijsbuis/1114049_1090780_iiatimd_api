@@ -59,10 +59,4 @@ class RecipeController extends Controller
             'prep_time_min'     => 'required|integer|min:3|max:255'
         ]);
     }
-
-    public function search(Request $request) {
-        // $recipe = Recipe::where('search', 'LIKE', '%'.$request.'%')->get();
-        $recipe = Recipe::all();
-        return response()->json(['message'=>'Success', 'data'=>$recipe], 200);
-    }
 }
