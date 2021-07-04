@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
+use App\Models\Recipe;
 
 class SearchController extends Controller
 {
@@ -11,9 +14,10 @@ class SearchController extends Controller
             'search' => 'required|string'
         ]);
 
-        $recipe = Recipe::where('search', 'LIKE', '%'.$request.'%')->get();
-        if (count($recipe) > 0 ) {
-            return response($recipe);
+        $recipes = Recipe::where('description', 'LIKE', '%'.$request->search.'%')->get();
+
+        if (count($recipes) > 0 ) {
+            return response($recipes);
         } else {
             return response('Geen recepten gevonden');
         }
