@@ -167,5 +167,61 @@ class InstructionSeeder extends Seeder
             'created_at'  => '2021-06-06 15:34:43',
             'updated_at'  => '2021-06-20 08:45:15'
         ]);
+        DB::table('instructions')->insert([
+            'recipe_id'   => '5',
+            'step_number' => '1',
+            'description' => "Snijd de kip in stukjes en bak deze gaar. Giet het vet af en voeg nu het zakje Mexicaanse kruiden toe, giet een beetje water bij zodat de kruiden zich makkelijk verspreiden.",
+            'created_at'  => '2021-06-06 15:34:43',
+            'updated_at'  => '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id'   => '5',
+            'step_number' => '2',
+            'description' => "Zet ondertussen op een laag vuur een pannetje op met daarin de inhoud van de bonen, gooi het sap dus niet af. Roer regelmatig.",
+            'created_at'  => '2021-06-06 15:34:43',
+            'updated_at'  => '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id'   => '5',
+            'step_number' => '3',
+            'description' => "Snijd alle groente in kleine blokjes en zet dit in schaaltjes op tafel.",
+            'created_at'  => '2021-06-06 15:34:43',
+            'updated_at'  => '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id'   => '5',
+            'step_number' => '4',
+            'description' => "Doe de wraps per 4 stuks in de magnetron voor 1 minuut op 600-700W. Leg deze op een bord en zet het bord op tafel.",
+            'created_at'  => '2021-06-06 15:34:43',
+            'updated_at'  => '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id'   => '5',
+            'step_number' => '5',
+            'description' => "Doe vervolgens alle andere ingrediënten in een bakje en zet ook deze op tafel. Iedereen kan nu een wrap pakken en daarop doen wat zij willen. Eet smakelijk!",
+            'created_at'  => '2021-06-06 15:34:43',
+            'updated_at'  => '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id'   => '6',
+            'step_number' => '1',
+            'description' => "Snijd de tomaten en halve komkommer in grove stukken. Schil de watermeloen en snijd in grove stukken.",
+            'created_at'  => '2021-06-06 15:34:43',
+            'updated_at'  => '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id'   => '6',
+            'step_number' => '2',
+            'description' => "Pers de limoen uit. Haal de blaadjes van de takjes basilicum en houd er een paar apart. Meng de meloen en komkommer met de tomaten, het limoensap, basilicum, de olie en ijsblokjes in de blender tot een gladde soep.",
+            'created_at'  => '2021-06-06 15:34:43',
+            'updated_at'  => '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id'   => '6',
+            'step_number' => '3',
+            'description' => "Breng op smaak met versgemalen peper en zout. Garneer met het achtergehouden basilicum.",
+            'created_at'  => '2021-06-06 15:34:43',
+            'updated_at'  => '2021-06-20 08:45:15'
+        ]);
     }
 }

@@ -293,5 +293,110 @@ class IngredientSeeder extends Seeder
             'created_at'=> '2021-06-06 15:34:43',
             'updated_at'=> '2021-06-20 08:45:15'
         ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '5',
+            'name'      => 'Mexicaanse wraps',
+            'amount'    => "8 stuks",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '5',
+            'name'      => 'Kipfilet',
+            'amount'    => "600 g",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '5',
+            'name'      => 'Mexicaanse kruiden',
+            'amount'    => "1 zakje",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '5',
+            'name'      => 'Geraspte kaas',
+            'amount'    => "300 g",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '5',
+            'name'      => 'Ijsbergsla',
+            'amount'    => "1 krop",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '5',
+            'name'      => 'Kidneybonen',
+            'amount'    => "400 g",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '5',
+            'name'      => 'Paprika',
+            'amount'    => "2 stuks",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '5',
+            'name'      => 'Tomaat',
+            'amount'    => "4 stuks",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '6',
+            'name'      => 'Tomaat',
+            'amount'    => "2 stuks",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '6',
+            'name'      => 'Komkommer',
+            'amount'    => "1 helft",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '6',
+            'name'      => 'Watermeloen',
+            'amount'    => "1 kg",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '6',
+            'name'      => 'Limoen',
+            'amount'    => "1 stuk",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '6',
+            'name'      => 'Verse basilicum',
+            'amount'    => "15 g",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '6',
+            'name'      => 'Extra vierge olijfolie',
+            'amount'    => "2 el",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
+        DB::table('instructions')->insert([
+            'recipe_id' => '6',
+            'name'      => 'Ijsblokjes',
+            'amount'    => "6 stuks",
+            'created_at'=> '2021-06-06 15:34:43',
+            'updated_at'=> '2021-06-20 08:45:15'
+        ]);
     }
 }

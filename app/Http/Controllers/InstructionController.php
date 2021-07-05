@@ -14,7 +14,8 @@ class InstructionController extends Controller
         $instructions = Instruction::all();
         return response()->json(['message'=>'Success', 'data'=>$instructions], 200);
     }
-    public function show(Instruction $instruction){
+    public function show($id){
+        $instruction = Instruction::find($id);
         return response()->json(['message'=>'Success','data'=>$instruction], 200);
     }
     public function store(Request $request, Recipe $recipe){
@@ -32,11 +33,30 @@ class InstructionController extends Controller
         return response()->json(['message'=>'Er gings iets fout','data'=>null], 400);
     }
 
+    public function update(Request $request, $id){
+        $validator = $this->validateUpdateInstruction();
+        if ($validator->fails()){
+            return response()->json(['message'=>$validator->messages(),'data'=>'null'], 400);
+        }
+
+        $updateInstruction = Instruction::find($id);
+        if ($updateInstruction->update($request->all())){
+            return response()->json(['message'=>'Instructie geupdate','data'=>$updateInstruction], 200);
+        }
+        return response()->json(['message'=>'Er gings iets fout','data'=>'null'], 400);
+    }
+
 
     public function validateInstruction(){
         return Validator::make(request()->all(),[
             'step_number' => 'required|integer|min:1|max:255',
             'description' => 'required|string|min:3|max:255'
+        ]);
+    }
+    public function validateUpdateInstruction(){
+        return Validator::make(request()->all(),[
+            'step_number' => 'integer|min:1|max:255',
+            'description' => 'string|min:3|max:255'
         ]);
     }
 }

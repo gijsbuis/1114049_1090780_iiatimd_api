@@ -37,7 +37,7 @@ class RecipeSeeder extends Seeder
         DB::table('recipes')->insert([
             'title'             => 'Risotto alla Milanese',
             'description_short' => 'De klassieke risotto uit Milaan',
-            'description'       => "Dit traditionele recept voor Risotto alla Milanese ook wel Risotto Giallo (gele risotto) genoemd is een van de bekendste rijstgerechten uit de Italiaanse keuken. Liefst worden draadjes saffraan gebruikt, afkomstig van krokussen uit Abruzzo, die de beste kwaliteit zouden waarborgen. Risotto alla Milanese is eigenlijk een van de weinige risotto's die als bijgerecht worden gebruikt, bijvoorbeeld bij het bekende Milanese gerecht Osso Bucco..',",
+            'description'       => "Dit traditionele recept voor Risotto alla Milanese is een van de bekendste rijstgerechten uit de Italiaanse keuken. Risotto alla Milanese is een van de weinige risotto's die als bijgerecht wordt gebruikt.",
             'prep_time_min'     => '300',
             'created_at'        => '2021-06-06 15:34:43',
             'updated_at'        => '2021-06-20 08:45:15'
@@ -47,6 +47,22 @@ class RecipeSeeder extends Seeder
             'description_short' => 'Makkelijke en vullende linzencurry',
             'description'       => "Met deze curry zet je erg makkelijk een vullend gerecht op tafel. Met dit recept valt er ontzettend veel te variëren en je hoeft je niet perse aan de ingrediënten te houden",
             'prep_time_min'     => '35',
+            'created_at'        => '2021-06-06 15:34:43',
+            'updated_at'        => '2021-06-20 08:45:15'
+        ]);
+        DB::table('recipes')->insert([
+            'title'             => 'Mexicaanse wraps',
+            'description_short' => 'Lekkere en snelle wraps op tafel',
+            'description'       => "Deze Mexicaanse wraps zijn voor elke student een goede maaltijd. Het fijne van dit recept is dat iedereen kan kiezen wat hij of zij op de wrap wil en zo wordt voor iedereen elke wrap een persoonlijke lekkernij.",
+            'prep_time_min'     => '25',
+            'created_at'        => '2021-06-06 15:34:43',
+            'updated_at'        => '2021-06-20 08:45:15'
+        ]);
+        DB::table('recipes')->insert([
+            'title'             => 'Gazpacho met watermeloen, tomaat en limoen',
+            'description_short' => 'Gazpacho van watermeloen, tomaat en limoen.',
+            'description'       => "Heerlijk verfrissend in de zomer deze gazpacho. Heel snel om klaar te maken en makkelijk te bewaren voor die warme zomerse momenten.",
+            'prep_time_min'     => '5',
             'created_at'        => '2021-06-06 15:34:43',
             'updated_at'        => '2021-06-20 08:45:15'
         ]);
