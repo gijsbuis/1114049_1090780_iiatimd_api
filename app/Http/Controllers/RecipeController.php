@@ -67,7 +67,7 @@ class RecipeController extends Controller
         return Validator::make(request()->all(),[
             'title'             => 'required|string|min:3|max:255', 
             'description_short' => 'required|string|min:3|max:255',
-            'description'       => 'required|string|min:3|max:255',
+            'description'       => 'required|string|min:3|max:1000',
             'prep_time_min'     => 'required|integer|min:3|max:255'
         ]);
     }
